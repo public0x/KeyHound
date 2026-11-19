@@ -1,0 +1,2 @@
+# APKScan uses only the Python 3.8+ standard library.
+# No third-party dependencies are required.
