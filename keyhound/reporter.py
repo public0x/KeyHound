@@ -23,7 +23,7 @@ def write_report(target, findings, stats, out_dir):
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"apkscan_report_{datetime.now():%Y%m%d_%H%M%S}.json")
     report = {
-        "tool": "APKScan",
+        "tool": "KeyHound",
         "note": "Local report. Secret values are masked. Handle per README disclosure guidance.",
         "target": target,
         "generated": datetime.now().isoformat(timespec="seconds"),
