@@ -71,11 +71,11 @@ python3 tools/make_demo_apk.py
 ## Usage
 
 ```bash
-python -m apkscan                        # scan bundled demo APK (safe default)
-python -m apkscan my_app.apk             # scan your own APK
-python -m apkscan my_app.apk --dry-run   # validate input and scope only
-python -m apkscan my_app.apk -o results  # custom output directory
-python -m apkscan --help                 # full help with examples
+python -m keyhound                        # scan bundled demo APK (safe default)
+python -m keyhound my_app.apk             # scan your own APK
+python -m keyhound my_app.apk --dry-run   # validate input and scope only
+python -m keyhound my_app.apk -o results  # custom output directory
+python -m keyhound --help                 # full help with examples
 ```
 
 On startup the tool shows the legal notice and requires you to type `yes` to confirm authorisation. Anything else exits without scanning. Press **Ctrl+C** at any time to stop safely (a partial report is still saved).
