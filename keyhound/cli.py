@@ -39,7 +39,7 @@ def _handle_abort(signum, frame):
 
 def build_parser():
     p = argparse.ArgumentParser(
-        prog="apkscan",
+        prog="keyhound",
         description="Scan an Android APK for hardcoded secrets and insecure "
                     "storage indicators using static pattern matching.",
         epilog="examples:\n"
@@ -55,7 +55,7 @@ def build_parser():
                    help="local output directory for the JSON report (default: output)")
     p.add_argument("--dry-run", action="store_true",
                    help="validate the APK and show the scope, but do not scan")
-    p.add_argument("--version", action="version", version=f"APKScan {__version__}")
+    p.add_argument("--version", action="version", version=f"KeyHound {__version__}")
     return p
 
 
@@ -69,10 +69,9 @@ def confirm_authorisation(target):
 
 
 def main(argv=None):
-    args = build_parser().parse_args(argv)
-    signal.signal(signal.SIGINT, _handle_abort)
-
+    args = build_parser().parse_args(argv)    
     confirm_authorisation(args.apk)
+    signal.signal(signal.SIGINT, _handle_abort)
 
     if not os.path.isfile(args.apk) or not zipfile.is_zipfile(args.apk):
         print(f"[x] '{args.apk}' is not a valid APK/ZIP file.")
