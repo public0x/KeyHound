@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from apkscan.scanner import mask, scan_apk
+from keyhound.scanner import mask, scan_apk
 
 DEMO = os.path.join(os.path.dirname(__file__), "..", "samples", "demo.apk")
 
