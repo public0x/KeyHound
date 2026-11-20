@@ -13,7 +13,7 @@ DEFAULT_TARGET = os.path.join("samples", "demo.apk")
 
 BANNER = r"""
 =====================================================================
- APKScan v{ver} - Android APK secrets & insecure-storage scanner
+ KeyHound v{ver} - Android APK secrets & insecure-storage scanner
 =====================================================================
  LEGAL NOTICE
  Under the Computer Crimes Act 1997 (Malaysia), Section 3 (unauthorised
@@ -43,10 +43,10 @@ def build_parser():
         description="Scan an Android APK for hardcoded secrets and insecure "
                     "storage indicators using static pattern matching.",
         epilog="examples:\n"
-               "  python -m apkscan                       scan bundled demo APK (safe default)\n"
-               "  python -m apkscan my_app.apk            scan your own APK\n"
-               "  python -m apkscan my_app.apk --dry-run  validate input only\n"
-               "  python -m apkscan my_app.apk -o results output to custom directory\n"
+               "  python -m keyhound                       scan bundled demo APK (safe default)\n"
+               "  python -m keyhound my_app.apk            scan your own APK\n"
+               "  python -m keyhound my_app.apk --dry-run  validate input only\n"
+               "  python -m keyhound my_app.apk -o results output to custom directory\n"
                "\nPress Ctrl+C at any time to abort safely.",
         formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("apk", nargs="?", default=DEFAULT_TARGET,
