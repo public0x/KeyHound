@@ -62,7 +62,11 @@ def build_parser():
 def confirm_authorisation(target):
     print(BANNER.format(ver=__version__))
     print(f"Declared scope (file to be analysed): {target}\n")
-    answer = input("Do you have authorisation to analyse this APK? (yes/no): ")
+    try:
+        answer = input("Do you have authorisation to analyse this APK? (yes/no): ")
+    except (KeyboardInterrupt, EOFError):
+        print("\nAborted before authorisation. Exiting without scanning.")
+        sys.exit(1)
     if answer.strip().lower() != "yes":
         print("Authorisation not confirmed. Exiting without scanning.")
         sys.exit(1)
